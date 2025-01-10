@@ -17,7 +17,7 @@ class _AllRecordsState extends State<AllRecords> {
     return Scaffold(
       body: StreamBuilder(stream:streamContent , builder: (context,snapshot){
         final docs = snapshot.data!.docs;
-     
+      
         return ListView.builder(
           itemCount: docs.length,
           itemBuilder: (context,index){
@@ -26,9 +26,11 @@ class _AllRecordsState extends State<AllRecords> {
                final content = data['name'];
             return ListTile(
               title: Text(content),
-              trailing: IconButton(onPressed: (){
-                print(data);
-              }, icon: Icon(Icons.delete)),
+              trailing: Row(
+                children: [
+                  IconButton(onPressed: (){
+                  
+                  }, icon: Icon(Icons.delete)),
             );
           }); 
       })
