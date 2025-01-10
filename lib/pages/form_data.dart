@@ -19,6 +19,7 @@ class _FormDataState extends State<FormData> {
      
       
     });
+    
   }
   @override
   Widget build(BuildContext context) {
@@ -39,6 +40,7 @@ class _FormDataState extends State<FormData> {
             child: ElevatedButton(onPressed: (){
               saveData();
               collectdata.clear();
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data Inserted successfully!"),action: SnackBarAction(label: "Undo", onPressed: (){}),));
             }, child:Text("submit")),
           ),
           Container(
